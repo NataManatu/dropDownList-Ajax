@@ -56,7 +56,7 @@ $("#population").on("input",function(){
         url: "test.php",
         data: {
             query: "get_population",
-            continent: thisPopulation ,
+            population: thisPopulation ,
         },
         success: function(response) {
           

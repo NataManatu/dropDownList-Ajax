@@ -21,6 +21,9 @@ if ($query == 'get_continents') {
 
     $result = $mysqli->query("SELECT name,population FROM `country` WHERE continent = '$continent' ORDER BY name");
 }
+else if($query=="get_population"){
+    $result = $mysqli->query("SELECT population FROM country"); 
+}
 
 
 
