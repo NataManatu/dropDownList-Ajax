@@ -18,11 +18,11 @@ if ($query == 'get_continents') {
     $result = $mysqli->query("SELECT DISTINCT continent FROM country");
 } else if ($query == 'get_country') {
     $continent = $_POST['continent'];
-
     $result = $mysqli->query("SELECT name,population FROM `country` WHERE continent = '$continent' ORDER BY name");
 }
 else if($query=="get_population"){
-    $result = $mysqli->query("SELECT population FROM country"); 
+    $population = $_POST['population'];
+    $result = $mysqli->query("SELECT population FROM country WHERE poulation = '$population'"); 
 }
 
 
