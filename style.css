@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    background-color: rgba(255, 222, 152, 0.765);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#webPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table_country {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.country-row {
+    display: flex;
+}
+
+.tb {
+    border: 2px solid black;
+    padding: 4px;
+}
