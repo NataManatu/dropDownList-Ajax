@@ -38,7 +38,7 @@ $(function () {
                 $.each(jsonData, function (indexInArray, valueOfElement) {
 
                     let htmlBlock = `
-                     <p class="tb">` + valueOfElement["name"] + "-" + valueOfElement["population"] + `</p>
+                     <p class="tb">` + valueOfElement["name"] + `</p>
                     `
                     $(".table_country").append(htmlBlock)
                 });
@@ -50,7 +50,8 @@ $(function () {
 
 $("#population").on("input", function () {
     let thisPopulation = $(this).val()
-    // alert($(this).val())
+    $('.table_country').empty()
+    // alert(thisPopulation)
     $.ajax({
         type: "POST",
         url: "test.php",
@@ -63,13 +64,14 @@ $("#population").on("input", function () {
             let jsonData = JSON.parse(response)
 
             $.each(jsonData, function (indexInArray, valueOfElement) {
-              
-                let htmlBlock = `
-                <p class="tb">` + valueOfElement["population"] + `</p>
-                `
-                $(".webPage").append(htmlBlock) 
 
+                let htmlBlock = `
+                <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
+                `
+                $(".table_country").append(htmlBlock)
+                // alert(response)
             });
+
         }
     });
 
