@@ -1,37 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Montserrat:wght@200;300;400;500&family=Noto+Serif&family=Patua+One&family=Rubik+Dirt&family=Yanone+Kaffeesatz:wght@200;400;500;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* font-family: 'Yanone Kaffeesatz', sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Tiro Devanagari Hindi', serif;
-    background-color: rgba(255, 222, 152, 0.765);
+    background-color: burlywood;
+    color: white;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 30px;
+    padding: 10px;
 }
 
-#webPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+select {
+    outline: none;
+    border-style: none;
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 .table_country {
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10px;
+    justify-content: center;
+    height: 50px;
+    line-height: 30px;
+    font-size: 16px;
+    color: rgb(69, 69, 69);
+    width: 500px;
+
+
+}
+
+.table_country p {
+    outline: 1px solid lightblue;
+    margin-top: 2px;
+    padding: 0 10px;
+
+}
+
+p {
     margin-top: 10px;
 }
 
-.country-row {
-    display: flex;
+span {
+    background-color: rgb(255, 253, 132);
 }
 
-.tb {
-    border: 2px solid black;
-    padding: 4px;
+input {
+    outline: none;
+    border-style: none;
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px;
 }

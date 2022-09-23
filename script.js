@@ -19,7 +19,7 @@ $.ajax({
     }
 });
 
-$(function () {
+
     $('#continents').change(function () {
         let thisContinent = $(this).val()
 
@@ -38,7 +38,7 @@ $(function () {
                 $.each(jsonData, function (indexInArray, valueOfElement) {
 
                     let htmlBlock = `
-                     <p class="tb">` + valueOfElement["name"] + `</p>
+                     <p ><span><b>` + valueOfElement["name"] + `</b></span>`+"-" + valueOfElement["population"]+" "+"(population)" + `</p>
                     `
                     $(".table_country").append(htmlBlock)
                 });
@@ -46,7 +46,7 @@ $(function () {
         });
 
     });
-});
+
 
 $("#population").on("input", function () {
     let thisPopulation = $(this).val()
@@ -57,7 +57,35 @@ $("#population").on("input", function () {
         url: "test.php",
         data: {
             query: "get_population",
-            population: thisPopulation,
+            population_min: thisPopulation,
+        },
+        success: function (response) {
+
+            let jsonData = JSON.parse(response)
+
+            $.each(jsonData, function (indexInArray, valueOfElement) {
+
+                let htmlBlock = `
+                <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
+                `
+                $(".table_country").prepend(htmlBlock)
+                // alert(response)
+            });
+
+        }
+    });
+
+})
+$("#population_to").on("input", function () {
+    let thisPopulation = $(this).val()
+    $('.table_country').empty()
+    // alert(thisPopulation)
+    $.ajax({
+        type: "POST",
+        url: "test.php",
+        data: {
+            query: "get_population",
+            population_max: thisPopulation,
         },
         success: function (response) {
 

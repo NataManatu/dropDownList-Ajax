@@ -18,11 +18,17 @@ if ($query == 'get_continents') {
     $result = $mysqli->query("SELECT DISTINCT continent FROM country");
 } else if ($query == 'get_country') {
     $continent = $_POST['continent'];
-    $result = $mysqli->query("SELECT name FROM `country` WHERE continent = '$continent' ORDER BY name");
+    $result = $mysqli->query("SELECT name,population FROM `country` WHERE continent = '$continent' ORDER BY name");
 }
-else if($query=="get_population"){
-    $population= $_POST['population'];
-    $result = $mysqli->query("SELECT population,name FROM `country` WHERE population = '$population'"); 
+// else if($query=="get_population"){
+//     $population= $_POST['population'];
+//     $result = $mysqli->query("SELECT population,name FROM `country` WHERE population >= '$population'"); 
+// }
+else if ($query == "get_population") {
+    $population_min = $_POST['population_min'];
+    $population_max = $_POST['population_max'];
+    // $population_max = 9999999999999;
+    $result = $mysqli->query("SELECT population,name FROM `country` WHERE population BETWEEN $population_min AND $population_max");
 }
 
 
@@ -38,6 +44,3 @@ while ($row = $result->fetch_assoc()) {
 $data_from_db = json_encode($data_from_db);
 
 echo $data_from_db;
-
-
-
