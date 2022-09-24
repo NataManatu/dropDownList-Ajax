@@ -36,10 +36,7 @@ $.ajax({
                 let jsonData = JSON.parse(response)
 
                 $.each(jsonData, function (indexInArray, valueOfElement) {
-
-                    let htmlBlock = `
-                     <p ><span><b>` + valueOfElement["name"] + `</b></span>`+"-" + valueOfElement["population"]+" "+"(population)" + `</p>
-                    `
+c
                     $(".table_country").append(htmlBlock)
                 });
             }
@@ -65,10 +62,11 @@ $("#population").on("input", function () {
 
             $.each(jsonData, function (indexInArray, valueOfElement) {
 
+               
                 let htmlBlock = `
-                <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
-                `
-                $(".table_country").prepend(htmlBlock)
+                <p ><span><b>` + valueOfElement["population"] + `</b></span>`+"-" + valueOfElement["name"]+" "+"(population)" + `</p>
+               `
+                $(".table_country").append(htmlBlock)
                 // alert(response)
             });
 
@@ -94,8 +92,8 @@ $("#population_to").on("input", function () {
             $.each(jsonData, function (indexInArray, valueOfElement) {
 
                 let htmlBlock = `
-                <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
-                `
+                <p ><span><b>` + valueOfElement["population"] + `</b></span>`+"-" + valueOfElement["name"]+" "+"(population)" + `</p>
+               `
                 $(".table_country").append(htmlBlock)
                 // alert(response)
             });
