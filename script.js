@@ -36,7 +36,10 @@ $.ajax({
                 let jsonData = JSON.parse(response)
 
                 $.each(jsonData, function (indexInArray, valueOfElement) {
-c
+
+                    let htmlBlock = `
+                     <p ><span><b>` + valueOfElement["name"] + `</b></span>`+"-" + valueOfElement["population"]+" "+"(population)" + `</p>
+                    `
                     $(".table_country").append(htmlBlock)
                 });
             }
@@ -46,7 +49,7 @@ c
 
 
 $("#population").on("input", function () {
-    let thisPopulation = $(this).val()
+    let thisPopulation1 = $(this).val()
     $('.table_country').empty()
     // alert(thisPopulation)
     $.ajax({
@@ -54,7 +57,7 @@ $("#population").on("input", function () {
         url: "test.php",
         data: {
             query: "get_population",
-            population_min: thisPopulation,
+            population_min: thisPopulation1,
         },
         success: function (response) {
 
@@ -62,11 +65,10 @@ $("#population").on("input", function () {
 
             $.each(jsonData, function (indexInArray, valueOfElement) {
 
-               
                 let htmlBlock = `
-                <p ><span><b>` + valueOfElement["population"] + `</b></span>`+"-" + valueOfElement["name"]+" "+"(population)" + `</p>
-               `
-                $(".table_country").append(htmlBlock)
+                <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
+                `
+                $(".table_country").prepend(htmlBlock)
                 // alert(response)
             });
 
@@ -75,7 +77,7 @@ $("#population").on("input", function () {
 
 })
 $("#population_to").on("input", function () {
-    let thisPopulation = $(this).val()
+    let thisPopulation2 = $(this).val()
     $('.table_country').empty()
     // alert(thisPopulation)
     $.ajax({
@@ -83,7 +85,7 @@ $("#population_to").on("input", function () {
         url: "test.php",
         data: {
             query: "get_population",
-            population_max: thisPopulation,
+            population_max: thisPopulation2,
         },
         success: function (response) {
 
@@ -92,8 +94,8 @@ $("#population_to").on("input", function () {
             $.each(jsonData, function (indexInArray, valueOfElement) {
 
                 let htmlBlock = `
-                <p ><span><b>` + valueOfElement["population"] + `</b></span>`+"-" + valueOfElement["name"]+" "+"(population)" + `</p>
-               `
+                <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
+                `
                 $(".table_country").append(htmlBlock)
                 // alert(response)
             });
