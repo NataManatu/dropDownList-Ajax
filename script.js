@@ -49,7 +49,7 @@ $.ajax({
 
 
 $("#population").on("input", function () {
-    let thisPopulation1 = $(this).val()
+    let thisPopulation = $(this).val()
     $('.table_country').empty()
     // alert(thisPopulation)
     $.ajax({
@@ -57,7 +57,7 @@ $("#population").on("input", function () {
         url: "test.php",
         data: {
             query: "get_population",
-            population_min: thisPopulation1,
+            population_min: thisPopulation,
         },
         success: function (response) {
 
@@ -77,7 +77,7 @@ $("#population").on("input", function () {
 
 })
 $("#population_to").on("input", function () {
-    let thisPopulation2 = $(this).val()
+    let thisPopulationTo = $(this).val()
     $('.table_country').empty()
     // alert(thisPopulation)
     $.ajax({
@@ -85,7 +85,7 @@ $("#population_to").on("input", function () {
         url: "test.php",
         data: {
             query: "get_population",
-            population_max: thisPopulation2,
+            population_max: thisPopulationTo,
         },
         success: function (response) {
 
