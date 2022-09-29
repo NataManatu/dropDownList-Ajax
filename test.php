@@ -20,14 +20,13 @@ if ($query == 'get_continents') {
     $continent = $_POST['continent'];
     $result = $mysqli->query("SELECT name,population FROM `country` WHERE continent = '$continent' ORDER BY name");
 }
-// else if($query=="get_population"){
-//     $population_min= $_POST['population_min'];
-//     $result = $mysqli->query("SELECT population,name FROM `country` WHERE population >= '$population_min'"); 
-// }
+else if($query=="get_population"){
+    $population_min= $_POST['population_min'];
+    $result = $mysqli->query("SELECT population,name FROM `country` WHERE population >= '$population_min'"); 
+}
 else if ($query == "get_population") {
     $population_min = $_POST['population_min'];
     $population_max= $_POST['population_max'];
-    // $population_max = 99999999;
     $result = $mysqli->query("SELECT population,name FROM `country` WHERE population BETWEEN '$population_min' AND '$population_max'");
 }
 
