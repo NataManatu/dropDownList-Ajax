@@ -21,6 +21,12 @@ h1 {
     margin-top: 20px;
 }
 
+h1 span {
+    background-color: rgb(90, 209, 248);
+    padding: 5px;
+    border-radius: 3px;
+}
+
 select {
     outline: none;
     border-style: none;

@@ -52,6 +52,7 @@ $('#continents').change(function () {
 
 
 $("#population").on("input", function () {
+    // alert("dd")
     let thisPopulation = $(this).val()
     population_min = thisPopulation
 
@@ -72,6 +73,7 @@ $("#population").on("input", function () {
 
 })
 $("#population_to").on("input", function () {
+    // alert("ss")
     let thisPopulationTo = $(this).val()
     population_max = thisPopulationTo
 
