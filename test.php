@@ -27,7 +27,7 @@ if ($query == 'get_continents') {
 else if ($query == "get_population") {
     $population_min = $_POST['population_min'];
     $population_max= $_POST['population_max'];
-    $result = $mysqli->query("SELECT population,name FROM `country` WHERE population >= '$population_min'"); 
+    
     $result = $mysqli->query("SELECT population,name FROM `country` WHERE population BETWEEN '$population_min' AND '$population_max'");
 }
 
