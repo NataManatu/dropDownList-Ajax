@@ -1,5 +1,5 @@
 let population_min = 0;
-let population_max = 99999999999999999;
+let population_max = 999999999999;
 
 
 $.ajax({
@@ -17,7 +17,6 @@ $.ajax({
             let htmlBlock = `
                 <option class="optionSelect">` + valueOfElement["continent"] + `</option>
              `
-
             $("#continents").append(htmlBlock)
         });
     }
@@ -75,7 +74,7 @@ $("#population").on("input", function () {
                 let htmlBlock = `
                 <p class="tb">` + valueOfElement["population"] + "-" + valueOfElement["name"] + `</p>
                 `
-                $(".table_country").prepend(htmlBlock)
+                $(".table_country").append(htmlBlock)
                 // alert(response)
             });
 
